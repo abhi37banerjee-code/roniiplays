@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Groove — Spotify-style Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Groove — a responsive Spotify-style music UI built with HTML, CSS & vanilla JavaScript.">
+</head>
+<body>
+  <main class="app" id="app">
+    <aside class="sidebar" aria-label="Playlists">
+      <header class="sidebar-header">
+        <h1>Groove</h1>
+        <p class="sub">Your local playlist</p>
+      </header>
+
+      <section class="playlist-section" aria-label="Song list">
+        <input id="search" class="search" type="search" placeholder="Search songs or artist…" aria-label="Search songs">
+        <ul id="songList" class="song-list" role="listbox" tabindex="0"></ul>
+      </section>
+
+      <footer class="sidebar-footer">
+        <small>Built with HTML • CSS • JS</small>
+      </footer>
+    </aside>
+
+    <section class="player" aria-label="Music player">
+      <div class="now-playing">
+        <div class="cover-wrap">
+          <img id="albumArt" class="cover" src="assets/images/placeholder.jpg" alt="Album art">
+        </div>
+        <div class="track-meta">
+          <h2 id="title">Title</h2>
+          <p id="artist" class="artist">Artist</p>
+        </div>
+      </div>
+
+      <div class="controls" role="group" aria-label="Playback controls">
+        <div class="control-top">
+          <button id="shuffleBtn" class="icon-btn" title="Shuffle" aria-pressed="false">🔀</button>
+          <button id="prevBtn" class="big-btn" title="Previous">⏮</button>
+          <button id="playBtn" class="play-btn" title="Play" aria-pressed="false">▶</button>
+          <button id="nextBtn" class="big-btn" title="Next">⏭</button>
+          <button id="repeatBtn" class="icon-btn" title="Repeat" aria-pressed="false">🔁</button>
+        </div>
+
+        <div class="progress-wrap" aria-hidden="false">
+          <time id="currentTime" class="time">0:00</time>
+          <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+          <time id="duration" class="time">0:00</time>
+        </div>
+
+        <div class="volume-wrap">
+          <button id="muteBtn" class="icon-btn" title="Mute">🔈</button>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+        </div>
+      </div>
+
+      <div class="extra">
+        <p class="hint">Tip: use <kbd>space</kbd> to play/pause, <kbd>←</kbd>/<kbd>→</kbd> to seek, <kbd>↑</kbd>/<kbd>↓</kbd> for volume.</p>
+      </div>
+
+      <audio id="audio" preload="metadata"></audio>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
