@@ -8,7 +8,7 @@ const tracks = [
     id: "t1",
     title: "Lost in the Night",
     artist: "Neon Echo",
-    src: "assets/songs/song1.mp3",
+    src: "https://github.com/abhi37banerjee-code/roniiplays/blob/main/song1.mp3",
     cover: "assets/images/cover1.jpg",
     duration: 0
   },
